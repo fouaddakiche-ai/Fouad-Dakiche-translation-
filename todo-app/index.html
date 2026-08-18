@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>📋 My Tasks</h1>
+                <p class="subtitle">Stay organized and productive</p>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="input-section">
+                <div class="input-group">
+                    <input type="text" id="taskInput" class="task-input" placeholder="Add a new task..." autocomplete="off">
+                    <button class="btn-add" id="addBtn"><span class="btn-icon">➕</span>Add Task</button>
+                </div>
+            </section>
+
+            <section class="filter-section">
+                <button class="filter-btn active" data-filter="all">All <span class="filter-count" id="countAll">0</span></button>
+                <button class="filter-btn" data-filter="active">Active <span class="filter-count" id="countActive">0</span></button>
+                <button class="filter-btn" data-filter="completed">Completed <span class="filter-count" id="countCompleted">0</span></button>
+            </section>
+
+            <section class="tasks-section">
+                <div id="tasksList" class="tasks-list">
+                    <div class="empty-state"><p class="empty-icon">🎉</p><p class="empty-text">No tasks yet. Add one to get started!</p></div>
+                </div>
+            </section>
+
+            <section class="stats-section">
+                <div class="stat"><span class="stat-label">Total Tasks</span><span class="stat-value" id="statTotal">0</span></div>
+                <div class="stat"><span class="stat-label">Completed</span><span class="stat-value" id="statCompleted">0</span></div>
+                <div class="stat"><span class="stat-label">Progress</span><span class="stat-value" id="statProgress">0%</span></div>
+            </section>
+
+            <section class="actions-section">
+                <button class="btn-action" id="clearCompleted">🗑️ Clear Completed</button>
+                <button class="btn-action btn-danger" id="clearAll">⚠️ Clear All Tasks</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
